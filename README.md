@@ -1,9 +1,10 @@
 # vimrc
 ## 安装过程
 ### 下载并安装 vim-plug
+
 ``` SHELL
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 ### 配置vimrc
@@ -12,6 +13,19 @@ git clone https://github.com/OakMolecule/dot_vimrc.git
 cd dot_vimrc
 ln vimrc ~/.vimrc
 vim +PlugInstall
+```
+
+### 字体库安装
+不安装也行，就是体验不太好
+```
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
 ```
 
 ## 快捷键简介
