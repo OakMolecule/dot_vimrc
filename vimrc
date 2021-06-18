@@ -71,9 +71,9 @@ Plug 'vim-scripts/a.vim'
 Plug 'terryma/vim-multiple-cursors'
 
 " markdown插件
-Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
-Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+"Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
+"Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
+"Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 call plug#end()
 
