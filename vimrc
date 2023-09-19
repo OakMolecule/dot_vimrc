@@ -10,9 +10,11 @@ Plug 'hzchirs/vim-material'
 " Plugin: Encoding
 Plug 'mbbill/fencview', {'on': 'FencAutoDetect'}
 
+Plug 'rust-lang/rust.vim'
+
 " Plug 'vim-syntastic/syntastic'
 Plug 'mhinz/vim-signify'                  " 对比当前文本和 git/svn 仓库里的版本
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 "Plug 'Lokaltog/vim-powerline'             " 控制台插件
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }   " C/C++语法高亮插件
 Plug 'Mizuchi/STL-Syntax'                 " STL语法高亮插件
@@ -52,8 +54,8 @@ Plug 'mileszs/ack.vim'                    " quik find
 
 Plug 'wakatime/vim-wakatime'              " 统计代码量
 
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --rust-completer' }
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 Plug 'Chiel92/vim-autoformat'             " auto format
 " Plug 'aperezdc/vim-template'
@@ -146,6 +148,7 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<TAB>']
 let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_error_symbol='✗'
 let g:ycm_warning_symbol='⚠'
+let g:ycm_clangd_args = ["--clang-tidy", "--header-insertion=iwyu"]
 
 
 map <F3> :tabnew .<CR>
@@ -252,6 +255,10 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 " LeaderF
 "nnoremap <C-p> :LeaderfFile ~<cr>
 let g:Lf_ShortcutF = '<C-P>'
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
+let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 let g:Lf_WildIgnore = {
             \ 'dir': ['.svn','.git','.hg','.vscode','.wine','.deepinwine','.oh-my-zsh'],
             \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
@@ -281,10 +288,10 @@ let g:gutentags_cache_dir = s:vim_tags
 " 同时开启 ctags 和 gtags 支持：
 let g:gutentags_modules = []
 if executable('ctags')
-	let g:gutentags_modules += ['ctags']
+        let g:gutentags_modules += ['ctags']
 endif
 if executable('gtags-cscope') && executable('gtags')
-	let g:gutentags_modules += ['gtags_cscope']
+        let g:gutentags_modules += ['gtags_cscope']
 endif
 
 " 配置 ctags 的参数，老的 Exuberant-ctags 不能有 --extra=+q，注意
@@ -341,4 +348,3 @@ let g:ale_sign_warning = '--'
 """"""""""""""
 " end ale
 """"""""""""""
-

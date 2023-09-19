@@ -1,5 +1,11 @@
 # vimrc
+
+配置方式参考 [韦易笑的回答 - 如何在 Linux 下利用 Vim 搭建 C/C++ 开发环境?](https://www.zhihu.com/question/47691414/answer/373700711)
+
+Ctags 安装推荐使用 [Universal Ctags](https://ctags.io/)
+
 ## 安装过程
+
 ### 下载并安装 vim-plug
 
 ``` SHELL
@@ -8,6 +14,7 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 ### 配置vimrc
+
 ``` SHELL
 git clone https://github.com/OakMolecule/dot_vimrc.git
 cd dot_vimrc
@@ -16,7 +23,9 @@ vim +PlugInstall
 ```
 
 ### 字体库安装
+
 不安装也行，就是体验不太好
+
 ```
 # clone
 git clone https://github.com/powerline/fonts.git --depth=1
@@ -29,7 +38,8 @@ rm -rf fonts
 ```
 
 ## 快捷键简介
-<Leader>未修改，为默认`\`
+
+<Leader> 未修改，为默认 `\`
 
 | 按键        | 作用                    |
 |-----------|-----------------------|
